@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26F6F6AD-74C8-4101-8EBC-E4754A4F41FE}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.12.1_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.12.1_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+    <QtVars>INCLUDEPATH+=E:\opencv4.5\build\include;LIBS+=E:\opencv4.5\build\x64\vc15\lib;INCLUDEPATH+==E:\Open3D_v0.10.0_VS2017\include;LIBS+=E:\Open3D_v0.10.0_VS2017\lib;$(QtVars)</QtVars>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\GLFW\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\glew\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\fmt\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\Eigen;E:\opencv4.5\build\include;E:\Open3D_v0.10.0_VS2017\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\opencv4.5\build\x64\vc15\lib;E:\Open3D_v0.10.0_VS2017\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>C:\Users\lailei.fu\Documents\Visual Studio 2017\Projects\QtWidgetsimgrecognition\QtWidgetsimgrecognition\RVCSDK\include;C:\Qt\Qt5.12.1\5.12.1\msvc2017_64\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\GLFW\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\glew\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\fmt\include;E:\Open3D_v0.10.0_VS2017\include\Open3D\3rdparty\Eigen;E:\Open3D_v0.10.0_VS2017\include;E:\opencv4.5\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\lailei.fu\Documents\Visual Studio 2017\Projects\QtWidgetsimgrecognition\QtWidgetsimgrecognition;C:\Users\lailei.fu\Documents\Visual Studio 2017\Projects\QtWidgetsimgrecognition\QtWidgetsimgrecognition\RVCSDK\lib;C:\Qt\Qt5.12.1\5.12.1\msvc2017_64\lib;E:\Open3D_v0.10.0_VS2017\lib;E:\opencv4.5\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>modbus.lib;RVC.lib;opencv_world453.lib;openGL32.lib;glew.lib;glfw3.lib;jsoncpp.lib;OPEN3D.lib;png.lib;qhullcpp.lib;qhullstatic_r.lib;tinyfiledialogs.lib;tinyobjloader.lib;turbojpeg-static.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\lailei.fu\Documents\Visual Studio 2017\Projects\QtWidgetsimgrecognition\QtWidgetsimgrecognition;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>opencv_world453.lib;openGL32.lib;glew.lib;glfw3.lib;jsoncpp.lib;OPEN3D.lib;png.lib;qhullcpp.lib;qhullstatic_r.lib;tinyfiledialogs.lib;tinyobjloader.lib;turbojpeg-static.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="SaveImage.cpp" />
+    <ClCompile Include="SavePointMap.cpp" />
+    <ClCompile Include="TCP.cpp" />
+    <QtRcc Include="QtWidgetsimgrecognition.qrc" />
+    <QtUic Include="QtWidgetsimgrecognition.ui" />
+    <QtMoc Include="QtWidgetsimgrecognition.h" />
+    <ClCompile Include="FileIO.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="QtWidgetsimgrecognition.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Mouse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="appexception.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="modbus-private.h" />
+    <ClInclude Include="modbus-rtu-private.h" />
+    <ClInclude Include="modbus-rtu.h" />
+    <ClInclude Include="modbus-tcp-private.h" />
+    <ClInclude Include="modbus-tcp.h" />
+    <ClInclude Include="modbus-version.h" />
+    <ClInclude Include="modbus.h" />
+    <ClInclude Include="SaveImage.h" />
+    <ClInclude Include="SavePointMap.h" />
+    <ClInclude Include="TCP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QtWidgetsimgrecognition.vcxproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="modbus.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
